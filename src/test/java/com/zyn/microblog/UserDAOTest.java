@@ -2,6 +2,7 @@ package com.zyn.microblog;
 
 import com.zyn.microblog.dao.UserDAO;
 import com.zyn.microblog.model.User;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -30,7 +31,7 @@ public class UserDAOTest {
     @Autowired
     UserDAO userDAO;
 
-    @Before
+    @Test
     public void insetTest() {
         Random random = new Random();
         for (int i = 0; i < 3; i++) {
@@ -48,13 +49,13 @@ public class UserDAOTest {
             user.setBirthday(new Date());
             user.setIntroduction("hello world");
             userDAO.addUser(user);
-            System.out.println(user);
             assertEquals(i + 1, user.getUserId());
         }
     }
 
     @Test
     public void selectByIdTest() {
+        System.out.println(userDAO.selectById(1));
         assertEquals("USER1", userDAO.selectById(1).getUserName());
     }
 
@@ -71,7 +72,7 @@ public class UserDAOTest {
         assertEquals("NICKNAME1", userDAO.selectByNickname("USERNAME1").getNickname());
     }
 
-    @Test
+    @After
     public void deleteUserById() {
         userDAO.deleteByUserId(1);
         assertNull(userDAO.selectById(1));
