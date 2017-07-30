@@ -16,8 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Date;
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * Created by zyn on 2017/7/26.
@@ -31,10 +30,10 @@ public class UserDAOTest {
     @Autowired
     UserDAO userDAO;
 
-    @Test
+    @Before
     public void insetTest() {
         Random random = new Random();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             User user = new User();
             user.setUserName(String.format("USER%d", i));
             user.setNickname(String.format("NICKNAME%d", i));
@@ -49,13 +48,12 @@ public class UserDAOTest {
             user.setBirthday(new Date());
             user.setIntroduction("hello world");
             userDAO.addUser(user);
-            assertEquals(i + 1, user.getUserId());
+            assertEquals(i, user.getUserId());
         }
     }
 
     @Test
     public void selectByIdTest() {
-        System.out.println(userDAO.selectById(1));
         assertEquals("USER1", userDAO.selectById(1).getUserName());
     }
 
@@ -69,12 +67,14 @@ public class UserDAOTest {
 
     @Test
     public void selectByNicknameTest() {
-        assertEquals("NICKNAME1", userDAO.selectByNickname("USERNAME1").getNickname());
+        assertEquals("NICKNAME1", userDAO.selectByNickname("NICKNAME1").getNickname());
     }
 
     @After
     public void deleteUserById() {
-        userDAO.deleteByUserId(1);
-        assertNull(userDAO.selectById(1));
+        for (int i = 1; i <= 3; i++) {
+            userDAO.deleteByUserId(i);
+            assertNull(userDAO.selectById(i));
+        }
     }
 }

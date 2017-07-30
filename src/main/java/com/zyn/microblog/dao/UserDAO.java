@@ -30,7 +30,23 @@ public interface UserDAO {
      * @param userId
      * @return 查询到的用户，不存在返回null
      */
+    //注意当列名和类的属性名不一样时，应该使用数据库和类属性映射方法 http://computerdragon.blog.51cto.com/6235984/1399742
     @Select({"select", SELECT_FIELDS, " from", TABLE_NAME, "where user_id = #{userId}"})
+    @Results (id = "user", value = {
+            @Result(id = true, property = "userId", column = "user_id"),
+            @Result(property = "userName", column = "user_name"),
+            @Result(property = "nickname", column = "nickname"),
+            @Result(property = "realName", column = "real_name"),
+            @Result(property = "password", column = "password"),
+            @Result(property = "salt", column = "salt"),
+            @Result(property = "headUrl", column = "head_url"),
+            @Result(property = "sex", column = "sex"),
+            @Result(property = "email", column = "email"),
+            @Result(property = "phone", column = "phone"),
+            @Result(property = "address", column = "address"),
+            @Result(property = "birthday", column = "birthday"),
+            @Result(property = "introduction", column = "introduction"),
+    })
     User selectById(int userId);
 
     /**
@@ -50,6 +66,7 @@ public interface UserDAO {
      * @return 查询到的用户，若不存在返回null。
      */
     @Select({"select ", SELECT_FIELDS, "from", TABLE_NAME, "where nickname = #{nickname}"})
+    @ResultMap("user")
     User selectByNickname(String nickname);
 
     /**
