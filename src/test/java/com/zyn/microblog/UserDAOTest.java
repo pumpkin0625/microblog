@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.JVM)  //按照方法定义的顺序进行测试
 @SpringBootTest
-@Sql("classpath:init-schema.sql")
+@Sql(scripts = "classpath:init-schema.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 public class UserDAOTest {
 
     @Autowired

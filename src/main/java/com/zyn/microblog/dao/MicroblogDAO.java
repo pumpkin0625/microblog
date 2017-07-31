@@ -18,7 +18,7 @@ public interface MicroblogDAO {
     @Insert({"insert into", TABLE_NAME, "(", INSERT_FIELDS, ") values (#{userId},#{createdDate}," +
             "#{content},#{likeCount},#{commentCount})"})
     @Options(keyProperty = "microblogId", useGeneratedKeys = true)
-    int addMicroblog(Microblog microblog);
+    void addMicroblog(Microblog microblog);
 
     //查询一条微博
     @Select({"select", SELECT_FIELDS, " from ", TABLE_NAME, "where microblog_id=#{microblogId}"})
@@ -35,7 +35,7 @@ public interface MicroblogDAO {
     //TODO: limit分页方式待优化，参考https://my.oschina.net/No5stranger/blog/158202，http://www.cnblogs.com/fjytzh/archive/2010/04/02/1702886.html
     @Select({"select", SELECT_FIELDS, "from", TABLE_NAME, "where user_id = #{userId} limit #{offset}, #{limit}"})
     @ResultMap("microblog")
-    List<Microblog> selectByUserId(int userId, int offset, int limit);
+    List<Microblog> selectByUserId(@Param("userId") int userId, @Param("offset") int offset, @Param("limit") int limit);
 
     //@Update({"update ",TABLE_NAME ,"set comment_count = #{commentCount},"})
 
