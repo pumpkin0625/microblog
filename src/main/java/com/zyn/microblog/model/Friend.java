@@ -4,31 +4,31 @@ package com.zyn.microblog.model;
  * Created by zyn on 2017/7/26.
  */
 public class Friend {
-    private int userId;
-    private int caredUserId;
-    private int hasCared;
+    private Integer userId;
+    private Integer caredUserId;
+    private Integer hasCared;
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public int getCaredUserId() {
+    public Integer getCaredUserId() {
         return caredUserId;
     }
 
-    public void setCaredUserId(int caredUserId) {
+    public void setCaredUserId(Integer caredUserId) {
         this.caredUserId = caredUserId;
     }
 
-    public int getHasCared() {
+    public Integer getHasCared() {
         return hasCared;
     }
 
-    public void setHasCared(int hasCared) {
+    public void setHasCared(Integer hasCared) {
         this.hasCared = hasCared;
     }
 

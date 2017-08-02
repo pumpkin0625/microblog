@@ -8,5 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public class FriendDao {
-
+    String TABLE_NAME = " friend ";
+    String INSERT_FIELDS = " cared_user_id, has_cared ";
+    String SELECT_FIELDS = " user_id," + INSERT_FIELDS;
+    
 }
