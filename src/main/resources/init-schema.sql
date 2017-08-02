@@ -51,6 +51,7 @@ DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
+  `microblog_id` int(11) NOT NULL,
   `entity_id` int(11) NOT NULL,
   `entity_type` int(11) NOT NULL,
   `created_date` datetime NOT NULL,

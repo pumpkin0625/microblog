@@ -1,4 +1,4 @@
-package com.zyn.microblog;
+package com.zyn.microblog.dao;
 
 import com.zyn.microblog.dao.UserDAO;
 import com.zyn.microblog.model.User;

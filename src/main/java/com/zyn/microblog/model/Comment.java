@@ -8,6 +8,7 @@ import java.util.Date;
 public class Comment {
     private int commentId;
     private int userId;
+    private int microblogId;
     private int entityId;
     private int entityType;
     private Date createdDate;
@@ -28,6 +29,14 @@ public class Comment {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public int getMicroblogId() {
+        return microblogId;
+    }
+
+    public void setMicroblogId(int microblogId) {
+        this.microblogId = microblogId;
     }
 
     public int getEntityId() {
