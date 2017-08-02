@@ -39,5 +39,4 @@ public interface MicroblogDAO {
 
     //@Update({"update ",TABLE_NAME ,"set comment_count = #{commentCount},"})
 
-
 }
