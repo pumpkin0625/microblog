@@ -1,6 +1,5 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.dao.UserDAO;
 import com.zyn.microblog.model.User;
 import org.junit.After;
 import org.junit.Before;
@@ -13,8 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Date;
-import java.util.Random;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -32,24 +30,9 @@ public class UserDAOTest {
 
     @Before
     public void insetTest() {
-        Random random = new Random();
-        for (int i = 1; i <= 3; i++) {
-            User user = new User();
-            user.setUserName(String.format("USER%d", i));
-            user.setNickname(String.format("NICKNAME%d", i));
-            user.setRealName(String.format("REALNAME%d", i));
-            user.setPassword("lsjdhf");
-            user.setSalt("zyn");
-            user.setHeadUrl(String.format("http://images.nowcoder.com/head/%dt.png,", random.nextInt(1000)));
-            user.setSex("Male");
-            user.setEmail(String.format("EMAIL%d", i));
-            user.setPhone(String.format("PHONE%d", i));
-            user.setAddress("西北工业大学");
-            user.setBirthday(new Date());
-            user.setIntroduction("hello world");
-            userDAO.addUser(user);
-            assertEquals(i, user.getUserId());
-        }
+        List<User> users = ModlesUtils.genUsersWithoutUserId(3);
+        users.forEach(userDAO::addUser);
+        users.forEach(user -> assertNotNull(user.getUserId()));
     }
 
     @Test

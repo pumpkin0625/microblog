@@ -13,8 +13,6 @@ import java.sql.SQLException;
  */
 public class UserDAOJDBC {
 
-    private DBUtil dbUtil = null;
-    private ResultSet resultSet = null;
 
     private String inserteUserSql = "insert into user " +
             "(user_name,nickname,real_name,password,salt,head_url,sex,email,phone,address,birthday,introduction) " +
