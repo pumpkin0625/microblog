@@ -52,8 +52,10 @@ public interface FriendDao {
      * @param userId
      * @return
      */
-    //TODO: 查询用户所有的粉丝，连接查询。
-    //@Select({""})
+    @Select({"select", UserDAO.TABLE_NAME, ".", UserDAO.SELECT_FIELDS, "from", TABLE_NAME, ",", UserDAO.TABLE_NAME,
+            "where ", TABLE_NAME, ".user_id=#{userId} and ",
+            UserDAO.TABLE_NAME, ".user_id=", TABLE_NAME, ".cared_user_id"})
+    @ResultMap("com.zyn.microblog.dao.UserDAO.user")
     List<User> selectUserFansByUserId(int userId);
 
     /**
