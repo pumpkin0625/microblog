@@ -11,11 +11,11 @@ import java.util.Date;
 @Getter
 @ToString
 public class Message {
-    private int messageId;
-    private int senderId;
-    private int receiverId;
-    private Date createdDate;
-    private String content;
-    private int has_read;
-    private String conversationId;
+    private int messageId;          //消息id
+    private int senderId;           //发送方
+    private int receiverId;         //接收方
+    private Date createdDate;       //创建时间
+    private String content;         //内容
+    private int has_read;           //是否已读
+    private Integer conversationId; //所属的会话id
 }

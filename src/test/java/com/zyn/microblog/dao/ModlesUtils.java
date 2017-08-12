@@ -1,9 +1,8 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.model.Friend;
-import com.zyn.microblog.model.Image;
-import com.zyn.microblog.model.Microblog;
-import com.zyn.microblog.model.User;
+import com.google.common.collect.Lists;
+import com.zyn.microblog.model.*;
+import lombok.val;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -95,5 +94,25 @@ class ModlesUtils {
             image.setMicroblogId(microblog.getMicroblogId());
         });
         return images;
+    }
+
+    /**
+     * 给相邻的user对创建会话
+     *
+     * @param users 模拟的用户列表
+     * @return users.size / 2数量的会话，fromuserid为user.id,touserid为(user+1).id
+     */
+    static List<Conversation> genConversations(List<User> users) {
+        List<Conversation> cvsts = Lists.newArrayList();
+        for (int i = 0; i < users.size(); i += 2) {
+            Conversation cvst = new Conversation();
+            cvst.setFromUserId(users.get(i).getUserId());
+            cvst.setToUserId(users.get(i + 1).getUserId());
+            cvst.setDeleteMark(0);
+            cvst.setType(0);
+            cvst.setCreatedDate(new Date());
+            cvsts.add(cvst);
+        }
+        return cvsts;
     }
 }

@@ -38,17 +38,19 @@ public interface FriendDao {
     Friend selectFriendByUserIdAndCaredId(@Param("userId") int userId, @Param("caredUserId") int caredUserId);
 
     /**
-     * 判断
+     * 判断user和caredUser之间的关系
      *
      * @param userId
      * @param caredUserId
-     * @return
+     * @return 0表示caredUser是user的粉丝，1表示相互关注
      */
     @Select({"select has_cared from", TABLE_NAME, "where user_id=#{userId} and cared_user_id=#{caredUserId}"})
     @ResultMap("friend")
     int selectStatusForUserAndCaredUser(@Param("userId") int userId, @Param("caredUserId") int caredUserId);
 
     /**
+     * 查询userId的所有粉丝
+     *
      * @param userId
      * @return
      */
@@ -59,6 +61,7 @@ public interface FriendDao {
     List<User> selectUserFansByUserId(int userId);
 
     /**
+     * 删除user的粉丝careduser
      * @param userId
      * @param caredUserId
      */
