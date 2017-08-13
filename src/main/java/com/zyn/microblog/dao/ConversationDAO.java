@@ -32,7 +32,7 @@ public interface ConversationDAO {
             @Result(property = "toUserId", column = "to_user_id"),
             @Result(property = "type", column = "type"),
             @Result(property = "createdDate", column = "created_date"),
-            @Result(property = "delete", column = "delete")
+            @Result(property = "deleteMark", column = "delete_mark")
     })
     List<Conversation> selectCvstByFromUserId(@Param("fromUserId") int fromUserId,
                                               @Param("offset") int offset,

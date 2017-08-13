@@ -47,7 +47,7 @@ CREATE TABLE `conversation` (
   `to_user_id` int(11) NOT NULL,
   `type` int(1) NOT NULL,
   `created_date` datetime NOT NULL,
-  `delete_mark` tinyint(1) NOT NULL DEFAULT '0',
+  `delete_mark` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`conversation_id`),
   KEY `from_user_id` (`from_user_id`),
   KEY `to_user_id` (`to_user_id`),

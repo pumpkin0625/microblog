@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * 测试工具类，生成模拟的model
  * Created by zyn on 2017/8/5.
  */
 class ModlesUtils {
@@ -114,5 +115,26 @@ class ModlesUtils {
             cvsts.add(cvst);
         }
         return cvsts;
+    }
+
+    /**
+     * @param cvsts
+     * @return
+     */
+    static List<Message> genMessages(List<Conversation> cvsts) {
+        List<Message> messages = Lists.newArrayList();
+        for (int i = 0; i < 2; i++) {
+            for (val cvst : cvsts) {
+                Message message = new Message();
+                message.setSenderId(cvst.getFromUserId());
+                message.setReceiverId(cvst.getToUserId());
+                message.setConversationId(cvst.getConversationId());
+                message.setCreatedDate(new Date());
+                message.setHasRead(0);
+                message.setContent("message");
+                messages.add(message);
+            }
+        }
+        return messages;
     }
 }

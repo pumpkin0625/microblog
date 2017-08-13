@@ -16,6 +16,6 @@ public class Message {
     private int receiverId;         //接收方
     private Date createdDate;       //创建时间
     private String content;         //内容
-    private int has_read;           //是否已读
+    private int hasRead;           //是否已读
     private Integer conversationId; //所属的会话id
 }

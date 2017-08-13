@@ -14,7 +14,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"createdDate"})
 public class Conversation {
     private Integer conversationId; //会话id
     private Integer fromUserId;     //发送方
