@@ -20,7 +20,7 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.JVM)  //按照方法定义的顺序进行测试
 @SpringBootTest
-@Sql("classpath:init-schema.sql")
+@Sql("classpath:dev/init-schema.sql")
 public class FriendDaoTest {
     @Autowired
     private UserDAO userDAO;

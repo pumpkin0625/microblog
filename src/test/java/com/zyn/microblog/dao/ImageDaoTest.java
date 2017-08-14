@@ -1,6 +1,5 @@
 package com.zyn.microblog.dao;
 
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import com.zyn.microblog.model.Image;
 import com.zyn.microblog.model.Microblog;
 import com.zyn.microblog.model.User;
@@ -23,7 +22,7 @@ import java.util.stream.Collectors;
 @RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.JVM)  //按照方法定义的顺序进行测试
 @SpringBootTest
-@Sql("classpath:init-schema.sql")
+@Sql("classpath:dev/init-schema.sql")
 public class ImageDaoTest {
     @Autowired
     private UserDAO userDAO;

@@ -1,7 +1,5 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.dao.MicroblogDAO;
-import com.zyn.microblog.dao.UserDAO;
 import com.zyn.microblog.model.Microblog;
 import com.zyn.microblog.model.User;
 import org.junit.FixMethodOrder;
@@ -32,7 +30,7 @@ public class MicroblogDaoTest {
     private UserDAO userDAO;
 
     //TODO: 为什么把Sql放到类前面，每个方法都要执行一次sql语句， 放到方法前面，仅仅当前方法执行。
-    @Sql(value = "classpath:init-schema.sql")
+    @Sql(value = "classpath:dev/init-schema.sql")
     @Test
     public void init() {
         for (int i = 1; i <= 3; i++) {

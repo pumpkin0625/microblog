@@ -4,7 +4,6 @@ import com.zyn.microblog.model.Conversation;
 import com.zyn.microblog.model.Message;
 import com.zyn.microblog.model.User;
 import lombok.val;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +25,7 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.JVM)  //按照方法定义的顺序进行测试
 @SpringBootTest
-@Sql("classpath:init-schema.sql")
+@Sql("classpath:dev/init-schema.sql")
 public class MessageDaoTest {
     @Autowired
     private ConversationDAO cvstDao;

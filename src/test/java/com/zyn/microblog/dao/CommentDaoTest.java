@@ -30,7 +30,7 @@ public class CommentDaoTest {
     @Autowired
     private CommentDao commentDao;
 
-    @Sql("classpath:init-schema.sql")
+    @Sql("classpath:dev/init-schema.sql")
     @Test
     public void init() {
         Random random = new Random();

@@ -124,12 +124,6 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-.gitignore`
 .idea/
 microblog.iml
-target/classes/application.properties
-target/classes/com/
-target/generated-sources/
-target/generated-test-sources/
-target/test-classes/
-target/classes/init-schema.sql
+target/
