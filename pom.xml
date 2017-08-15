@@ -117,6 +117,7 @@
                     <exclude>prod/*</exclude>
                 </excludes>
             </resource>
+            <!--每个环境加载自己的资源-->
             <resource>
                 <directory>src/main/resources/${conf-dir}</directory>
             </resource>
@@ -129,9 +130,6 @@
             <properties>
                 <conf-dir>local</conf-dir>
             </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
         </profile>
         <!--dev环境-->
         <profile>

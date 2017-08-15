@@ -3,6 +3,7 @@ package com.zyn.microblog.dao;
 
 import com.zyn.microblog.model.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.cache.annotation.Cacheable;
 
 /**
  * Created by zyn on 2017/7/27.
