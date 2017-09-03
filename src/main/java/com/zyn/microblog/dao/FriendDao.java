@@ -1,7 +1,7 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.model.Friend;
-import com.zyn.microblog.model.User;
+import com.zyn.microblog.usercenter.model.Friend;
+import com.zyn.microblog.usercenter.model.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -60,6 +60,10 @@ public interface FriendDao {
     @ResultMap("com.zyn.microblog.dao.UserDAO.user")
     List<User> selectUserFansByUserId(int userId);
 
+
+    @Select({"select", SELECT_FIELDS, "from", TABLE_NAME, "where user_id=#{userId}"})
+    @ResultMap("com.zyn.microblog.dao.UserDAO.user")
+    List<Friend> selectFriendsByUserId(int userId);
     /**
      * 删除user的粉丝careduser
      * @param userId

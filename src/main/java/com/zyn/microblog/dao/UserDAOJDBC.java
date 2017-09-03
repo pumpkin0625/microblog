@@ -1,11 +1,10 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.model.User;
+import com.zyn.microblog.usercenter.model.User;
 import com.zyn.microblog.util.DBUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**

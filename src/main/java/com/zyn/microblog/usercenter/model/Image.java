@@ -1,9 +1,8 @@
-package com.zyn.microblog.model;
+package com.zyn.microblog.usercenter.model;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.apache.ibatis.annotations.Insert;
 
 /**
  * 微博配图，每个微博最多有九张图

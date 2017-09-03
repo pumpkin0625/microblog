@@ -1,4 +1,4 @@
-package com.zyn.microblog.model;
+package com.zyn.microblog.usercenter.model;
 
 import lombok.*;
 

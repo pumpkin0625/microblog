@@ -1,7 +1,6 @@
-package com.zyn.microblog.model;
+package com.zyn.microblog.usercenter.model;
 
 import lombok.*;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.Date;
 

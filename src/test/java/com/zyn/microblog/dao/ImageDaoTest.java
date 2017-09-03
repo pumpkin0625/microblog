@@ -1,8 +1,8 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.model.Image;
-import com.zyn.microblog.model.Microblog;
-import com.zyn.microblog.model.User;
+import com.zyn.microblog.usercenter.model.Image;
+import com.zyn.microblog.usercenter.model.Microblog;
+import com.zyn.microblog.usercenter.model.User;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;

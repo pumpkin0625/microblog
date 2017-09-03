@@ -1,6 +1,6 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.model.Comment;
+import com.zyn.microblog.usercenter.model.Comment;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 
