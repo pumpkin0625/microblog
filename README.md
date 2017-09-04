@@ -12,7 +12,11 @@ thrift：http://dongxicheng.org/search-engine/thrift-framework-intro/
 - spring&spring mvc
 - 数据库：采用MySQL和mybatis对数据进行持久化。
 - rpc：zookeeper注册服务，服务自动发现，thrift完成rpc中对象传输。
-- redis：由于comment，thumb up（点赞）， message（私信）调用频次比较高，因此使用redis对这些数据进行缓存，减轻数据库压力。
+- redis：由于comment，thumb up（点赞）， message（私信）调用频次比较高，因此使用redis对这些数据进行缓存，定时将其，减轻数据库压力。
+    - 对于点赞信息：直接写到redis，定时刷新到mysql中去。
+    - 对于其他信息：
+        - 读:  读redis->没有，读mysql->把mysql数据写回redis
+        - 写:  写mysql->成功，写redis
 
 总结：系统分为用户中心组件，评论组件，点赞组件，私信组件和微博组件共同构成了微博应用。
 
