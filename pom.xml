@@ -11,6 +11,10 @@
         <module>user-center-service</module>
         <module>user-center-sdk</module>
         <module>common</module>
+        <module>message-sdk</module>
+        <module>message-service</module>
+        <module>microblog-content-sdk</module>
+        <module>microblog-content-service</module>
     </modules>
     <packaging>pom</packaging>
 
