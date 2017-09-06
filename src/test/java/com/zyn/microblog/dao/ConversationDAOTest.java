@@ -1,7 +1,7 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.usercenter.model.Conversation;
-import com.zyn.microblog.usercenter.model.User;
+import com.zyn.microblog.model.Conversation;
+import com.zyn.microblog.model.User;
 import lombok.val;
 import org.junit.Before;
 import org.junit.FixMethodOrder;

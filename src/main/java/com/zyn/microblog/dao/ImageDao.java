@@ -1,6 +1,6 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.usercenter.model.Image;
+import com.zyn.microblog.model.Image;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

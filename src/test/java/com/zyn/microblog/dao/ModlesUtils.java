@@ -1,7 +1,7 @@
 package com.zyn.microblog.dao;
 
 import com.google.common.collect.Lists;
-import com.zyn.microblog.usercenter.model.*;
+import com.zyn.microblog.model.*;
 import lombok.val;
 
 import java.util.ArrayList;

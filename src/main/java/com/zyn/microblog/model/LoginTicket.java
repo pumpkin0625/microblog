@@ -1,4 +1,4 @@
-package com.zyn.microblog.usercenter.model;
+package com.zyn.microblog.model;
 
 import lombok.Getter;
 import lombok.Setter;

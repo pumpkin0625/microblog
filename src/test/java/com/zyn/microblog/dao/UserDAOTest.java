@@ -1,6 +1,6 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.usercenter.model.User;
+import com.zyn.microblog.model.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;

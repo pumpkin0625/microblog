@@ -1,6 +1,6 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.usercenter.model.Message;
+import com.zyn.microblog.model.Message;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

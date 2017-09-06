@@ -1,7 +1,7 @@
 package com.zyn.microblog.dao;
 
-import com.zyn.microblog.usercenter.model.Microblog;
-import com.zyn.microblog.usercenter.model.User;
+import com.zyn.microblog.model.Microblog;
+import com.zyn.microblog.model.User;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;

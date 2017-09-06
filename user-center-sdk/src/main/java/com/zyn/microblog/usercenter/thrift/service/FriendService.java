@@ -16,7 +16,7 @@ public interface FriendService {
      * @param limit
      * @return 如果查询成功，返回friends且success为true；否则success为false。
      */
-    FriendsResq getFriendByUserId(long userId, int offset, int limit);
+    FriendsResp getFriendByUserId(long userId, int offset, int limit);
 
     /**
      * @param caredUserId

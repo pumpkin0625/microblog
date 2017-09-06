@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="thriftZookeeper" class="com.zyn.microblog.thrift.rpc.zookeeper.ZookeeperFactory"
+          destroy-method="close">
+        <!--zookeeper主机及端口-->
+        <property name="zkHosts" value="115.159.66.22:2181"/>
+        <property name="namespace" value="com.zyn.microblog"/>
+        <property name="connectionTimeout" value="200"/>
+        <property name="sessionTimeout" value="200"/>
+        <property name="singleton" value="true"/>
+    </bean>
+    <!--地址注册器-->
+    <bean id="sericeAddressRegister" class="com.zyn.microblog.thrift.rpc.zookeeper.ThriftServerAddressRegisterZookeeper"
+          destroy-method="close">
+        <property name="zkClient" ref="thriftZookeeper"/>
+    </bean>
+
+    <bean id="friendServiceImpl" class="com.zyn.microblog.usercenter.thrift.FriendServiceImpl"/>
+    <bean id="userServiceImpl" class="com.zyn.microblog.usercenter.thrift.UserServiceImpl"/>
+
+    <bean id="friendService" class="com.zyn.microblog.thrift.rpc.ThriftServiceServerFactory" destroy-method="close">
+        <property name="service" ref="friendServiceImpl"/>
+        <property name="port" value="9000"/>
+        <property name="version" value="1.0.0"/>
+        <property name="weight" value="1"/>
+        <property name="thriftServerAddressRegister" ref="sericeAddressRegister"/>
+    </bean>
+    <bean id="userService" class="com.zyn.microblog.thrift.rpc.ThriftServiceServerFactory" destroy-method="close">
+        <property name="service" ref="userServiceImpl"/>
+        <property name="port" value="9001"/>
+        <property name="version" value="1.0.0"/>
+        <property name="weight" value="1"/>
+        <property name="thriftServerAddressRegister" ref="sericeAddressRegister"/>
+    </bean>
+</beans>

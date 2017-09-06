@@ -14,7 +14,7 @@ import java.util.List;
  */
 @AllArgsConstructor
 @NoArgsConstructor
-public class FriendsResq {
+public class FriendsResp {
     private boolean success;
     private Error error;
     private List<FriendDTO> friend;
